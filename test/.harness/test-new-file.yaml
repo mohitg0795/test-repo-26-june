@@ -2,7 +2,7 @@
 connector:
   name: test-new-file
   identifier: testnewfile
-  description:
+  description: added description from git
   orgIdentifier: default
   projectIdentifier: gitsync26june
   type: DockerRegistry
