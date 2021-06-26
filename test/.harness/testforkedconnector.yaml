@@ -1,0 +1,12 @@
+connector:
+  name: test-forked-connector
+  identifier: testforkedconnector
+  description: added description on UI
+  orgIdentifier: default
+  projectIdentifier: gitsync26june
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: random
+    providerType: DockerHub
+    auth:
+      type: Anonymous
