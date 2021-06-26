@@ -1,7 +1,7 @@
 connector:
   name: test-1
   identifier: test1
-  description: added description
+  description: added description - 2
   orgIdentifier: default
   projectIdentifier: gitsync26june
   type: DockerRegistry
