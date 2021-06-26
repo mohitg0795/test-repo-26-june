@@ -1,7 +1,7 @@
 connector:
   name: test-4
   identifier: test4
-  description: added decription
+  description: added decription from g2h
   orgIdentifier: default
   projectIdentifier: gitsync26june
   type: DockerRegistry
