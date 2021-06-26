@@ -1,0 +1,12 @@
+connector:
+  name: test-1
+  identifier: test1
+  description:
+  orgIdentifier: default
+  projectIdentifier: gitsync26june
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: master
+    providerType: DockerHub
+    auth:
+      type: Anonymous
