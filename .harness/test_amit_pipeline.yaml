@@ -1,5 +1,5 @@
 pipeline:
-  name: test amit pipeline
+  name: test amit pipeline 2
   identifier: test_amit_pipeline
   projectIdentifier: DoNotDelete_AmitSingh
   orgIdentifier: Pipelines_NonK8s_Org_NG
