@@ -1,0 +1,21 @@
+inputSet:
+  name: test input set
+  identifier: test_input_set
+  orgIdentifier: default
+  projectIdentifier: test123
+  pipeline:
+    identifier: test_pipeline_trigger
+    stages:
+      - stage:
+          identifier: test
+          type: Approval
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: test
+                    type: HarnessApproval
+                    spec:
+                      approvers:
+                        userGroups:
+                          - account._account_all_users
