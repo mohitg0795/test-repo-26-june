@@ -1,3 +1,6 @@
 service:
   name: test-native-helm
   identifier: testnativehelm
+  serviceDefinition:
+    spec: {}
+    type: NativeHelm
