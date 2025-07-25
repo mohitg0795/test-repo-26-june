@@ -1,0 +1,3 @@
+service:
+  name: test-native-helm
+  identifier: testnativehelm
