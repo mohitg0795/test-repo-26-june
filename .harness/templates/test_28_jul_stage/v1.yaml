@@ -37,6 +37,7 @@ template:
         infrastructureDefinitions: <+input>
     failureStrategies:
       - onFailure:
-          errors: []
+          errors:
+            - AllErrors
           action:
             type: MarkAsFailure
