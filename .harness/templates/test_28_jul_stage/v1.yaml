@@ -1,0 +1,42 @@
+template:
+  name: test 28 jul stage
+  identifier: test_28_jul_stage
+  versionLabel: v1
+  type: Stage
+  tags: {}
+  spec:
+    type: Deployment
+    spec:
+      deploymentType: NativeHelm
+      execution:
+        steps:
+          - step:
+              type: K8sDelete
+              name: K8sDelete_1
+              identifier: K8sDelete_1
+              spec:
+                deleteResources:
+                  type: ResourceName
+                  spec:
+                    resourceNames: <+input>
+              timeout: 10m
+              failureStrategies:
+                - onFailure:
+                    errors:
+                      - AllErrors
+                    action:
+                      type: MarkAsFailure
+        rollbackSteps: []
+      service:
+        serviceRef: account.testnativehelm
+      environment:
+        environmentRef: <+input>
+        deployToAll: false
+        environmentInputs: <+input>
+        serviceOverrideInputs: <+input>
+        infrastructureDefinitions: <+input>
+    failureStrategies:
+      - onFailure:
+          errors: []
+          action:
+            type: MarkAsFailure
