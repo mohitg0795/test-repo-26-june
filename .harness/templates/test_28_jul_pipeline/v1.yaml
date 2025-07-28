@@ -1,0 +1,33 @@
+template:
+  name: test 28 jul pipeline
+  identifier: test_28_jul_pipeline
+  versionLabel: v1
+  type: Pipeline
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: test
+          identifier: test
+          tags: {}
+          template:
+            templateRef: account.test_28_jul_stage
+            versionLabel: v1
+            templateInputs:
+              type: Deployment
+              spec:
+                execution:
+                  steps:
+                    - step:
+                        identifier: K8sDelete_1
+                        type: K8sDelete
+                        spec:
+                          deleteResources:
+                            type: ResourceName
+                            spec:
+                              resourceNames: <+input>
+                environment:
+                  environmentRef: <+input>
+                  environmentInputs: <+input>
+                  serviceOverrideInputs: <+input>
+                  infrastructureDefinitions: <+input>
