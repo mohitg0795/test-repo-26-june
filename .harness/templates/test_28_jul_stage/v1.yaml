@@ -29,6 +29,7 @@ template:
         rollbackSteps: []
       service:
         serviceRef: account.testnativehelm
+        gitBranch: ref
       environment:
         environmentRef: <+input>
         deployToAll: false
