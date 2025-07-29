@@ -1,0 +1,40 @@
+template:
+  name: test stage 29 jul
+  identifier: test_stage_29_jul
+  versionLabel: v1
+  type: Stage
+  tags: {}
+  spec:
+    type: Deployment
+    spec:
+      deploymentType: NativeHelm
+      environment:
+        environmentRef: <+input>
+        deployToAll: false
+        environmentInputs: <+input>
+        serviceOverrideInputs: <+input>
+        infrastructureDefinitions: <+input>
+      service:
+        serviceRef: account.test_service_29_jul
+      execution:
+        steps:
+          - step:
+              name: Helm Deployment
+              identifier: helmDeployment
+              type: HelmDeploy
+              timeout: 10m
+              spec:
+                skipDryRun: false
+        rollbackSteps:
+          - step:
+              name: Helm Rollback
+              identifier: helmRollback
+              type: HelmRollback
+              timeout: 10m
+              spec: {}
+    failureStrategies:
+      - onFailure:
+          errors:
+            - AllErrors
+          action:
+            type: StageRollback
